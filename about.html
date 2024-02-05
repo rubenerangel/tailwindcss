@@ -7,10 +7,10 @@
 
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="tailwind.css">
-    <title>Tailwind CSS</title>
+    <title>SAbout</title>
 </head>
 
-<body class="bg-slate-100">
+<body class="bg-slate-100 flex flex-col h-screen">
     <header class="bg-white shadow px-6">
         <div class="flex max-w-6xl mx-auto justify-between h-16 items-center">
             <button
@@ -31,10 +31,10 @@
                     </svg>
                 </a>
                 <div class="space-x-8 ml-8 hidden md:flex">
-                    <a class="px-3 py-2 text-sky-500" href="/">
+                    <a class="px-3 py-2 text-slate-600 transition-colors hover:text-sky-500" href="/">
                         Home
                     </a>
-                    <a class="transition-colors text-slate-600 px-3 py-2 hover:text-sky-500" href="/about.html">
+                    <a class="px-3 py-2 text-sky-500" href="/about.html">
                         About
                     </a>
                     <a class="transition-colors text-slate-600 px-3 py-2 hover:text-sky-500" href="/blog.html">
@@ -64,12 +64,13 @@
 
             </div>
         </div>
+        <!-- Mobile Navigation -->
         <div class="hidden space-y-1 pb-3 pt-2 border-t md:hidden">
-            <a href="/" class="block  bg-sky-500 text-white px-3 py-2 rounded-md">
+            <a href="/"
+                class="block rounded-md px-3 py-2 transition-colors hover:bg-sky-500 hover:text-white  text-slate-700                     ">
                 Home
             </a>
-            <a href="/about.html"
-                class="block text-slate-700 hover:bg-sky-500 hover:text-white px-3 py-2 rounded-md transition-colors">
+            <a href="/about.html" class="block  bg-sky-500 text-white px-3 py-2 rounded-md">
                 About
             </a>
             <a href="/blog.html"
@@ -82,194 +83,22 @@
             </a>
         </div>
     </header>
-    <main class="p-4">
-        <div class="mt-4 mx-auto gap-4 max-w-6xl grid md:grid-cols-2 lg:grid-cols-3">
-            <article class="bg-white shadow rounded overflow-hidden flex flex-col">
-                <div class="h-52">
-                    <img class="h-full w-full object-cover object-center" src="/images/article-1.jpg"
-                        alt="Desarrollo de una API con Laravel siguiendo la especificación JSON:API">
+    <main class="p-4 flex-1">
+        <div class="mt-4 mx-auto max-w-6xl">
+            <h1 class="text-3xl font-serif font-extrabold text-sky-700 text-center">About</h1>
+            <div class="bg-white p-10 rounded-lg shadow-lg max-w-4xl mx-auto md:p-14">
+                <div class="mt-10 space-y-4 text-slate-500">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium molestias in amet quisquam,
+                        quaerat consectetur dignissimos deleniti repudiandae cumque eligendi qui ducimus possimus, unde
+                        voluptas consequatur odio optio voluptate? Doloremque.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolorem deleniti unde. Sequi,
+                        facilis aut. A laborum impedit animi earum optio excepturi, voluptatem possimus harum omnis
+                        cupiditate deleniti atque quaerat.</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit deserunt fuga quas dolores ullam?
+                        Dolorum ea dicta numquam! Similique aut quod obcaecati, fuga illum molestiae dicta quas officiis
+                        pariatur unde.</p>
                 </div>
-                <div class="p-5 space-y-3 flex-1">
-                    <h3 class="text-sm font-semibold text-sky-500">Desk and Office</h3>
-                    <h2 class="text-xl font-semibold text-slate-800 leading-tight">Boost your conversion rate
-                    </h2>
-                    <p class="text-slate-500 hidden md:block"> Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Maiores impedit perferendis suscipit eaque, iste
-                        dolor cupiditate blanditiis ratione.</p>
-                </div>
-                <div class="flex p-5 space-x-2">
-                    <img class="w-10 h-10 rounded-full" src="https://ui-avatars.com/api?name=Roel Aufderehar"
-                        alt="Roel Aufderehar">
-                    <div class="flex flex-col justify-center">
-                        <span class="text-sm font-semibold text-slate-600 leading-4">
-                            Roel Aufderehar
-                        </span>
-                        <span class="text-sm text-slate-500">
-                            Mar 16, 2023
-                        </span>
-                    </div>
-
-                </div>
-            </article>
-            <article class="bg-white shadow rounded overflow-hidden flex flex-col">
-                <div class="h-52">
-                    <img class="h-full w-full object-cover object-center" src="/images/article-2.jpg"
-                        alt="How to use search engine optimization to drive sales">
-                </div>
-                <div class="p-5 space-y-3 flex-1">
-                    <h3 class="text-sm font-semibold text-sky-500">Laravel</h3>
-                    <h2 class="text-xl font-semibold text-slate-800 leading-tight">How to use search engine optimization
-                        to drive sales
-                    </h2>
-                    <p class="text-slate-500 hidden md:block"> Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Sit omnis id ipsa sed autem. Cumque officiis
-                        similique eum quas vel! Ratione dolorum maiores
-                        repudiandae cumque dolor tenetur reiciendis temporibus
-                        autem!</p>
-                </div>
-                <div class="flex p-5 space-x-2">
-                    <img class="w-10 h-10 rounded-full" src="https://ui-avatars.com/api?name=Brenna Goyette"
-                        alt="Brenna Goyette">
-                    <div class="flex flex-col justify-center">
-                        <span class="text-sm font-semibold text-slate-600 leading-4">
-                            Brenna Goyette
-                        </span>
-                        <span class="text-sm text-slate-500">
-                            Mar 02, 2023
-                        </span>
-                    </div>
-
-                </div>
-            </article>
-            <article class="bg-white shadow rounded overflow-hidden flex flex-col">
-                <div class="h-52">
-                    <img class="h-full w-full object-cover object-center" src="/images/article-3.jpg"
-                        alt="Daily commute essentials">
-                </div>
-                <div class="p-5 space-y-3 flex-1">
-                    <h3 class="text-sm font-semibold text-sky-500">Travel</h3>
-                    <h2 class="text-xl font-semibold text-slate-800 leading-tight">Daily commute essentials
-                    </h2>
-                    <p class="text-slate-500 hidden md:block"> Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Maiores impedit perferendis suscipit eaque, iste
-                        dolor cupiditate blanditiis ratione.</p>
-                </div>
-                <div class="flex p-5 space-x-2">
-                    <img class="w-10 h-10 rounded-full" src="https://ui-avatars.com/api?name=Daniela Metz"
-                        alt="Daniela Metz">
-                    <div class="flex flex-col justify-center">
-                        <span class="text-sm font-semibold text-slate-600 leading-4">
-                            Daniela Metz
-                        </span>
-                        <span class="text-sm text-slate-500">
-                            Mar 18, 2023
-                        </span>
-                    </div>
-
-                </div>
-            </article>
-            <article class="bg-white shadow rounded overflow-hidden flex flex-col">
-                <div class="h-52">
-                    <img class="h-full w-full object-cover object-center" src="/images/article-4.jpg"
-                        alt="Desarrollo de una API con Laravel siguiendo la especificación JSON:API">
-                </div>
-                <div class="p-5 space-y-3 flex-1">
-                    <h3 class="text-sm font-semibold text-sky-500">Laravel</h3>
-                    <h2 class="text-xl font-semibold text-slate-800 leading-tight">Desarrollo de una API con Laravel
-                        siguiendo
-                        la
-                        especificación JSON:API
-                    </h2>
-                    <p class="text-slate-500 hidden md:block"> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Id
-                        quibusdam ad
-                        quod consectetur veniam
-                        quasi facilis quidem sunt quaerat. Tempore veniam, labore dignissimos et impedit inventore
-                        voluptas
-                        beatae praesentium cum?</p>
-                </div>
-                <div class="flex p-5 space-x-2">
-                    <img class="w-10 h-10 rounded-full" src="https://ui-avatars.com/api?name=Rubén Rangel"
-                        alt="Rubén Rangel">
-                    <div class="flex flex-col justify-center">
-                        <span class="text-sm font-semibold text-slate-600 leading-4">
-                            Rubén Rangel
-                        </span>
-                        <span class="text-sm text-slate-500">
-                            Mar 18, 2023
-                        </span>
-                    </div>
-
-                </div>
-            </article>
-            <article class="bg-white shadow rounded overflow-hidden flex flex-col">
-                <div class="h-52">
-                    <img class="h-full w-full object-cover object-center" src="/images/article-5.jpg"
-                        alt="Desarrollo de una API con Laravel siguiendo la especificación JSON:API">
-                </div>
-                <div class="p-5 space-y-3 flex-1">
-                    <h3 class="text-sm font-semibold text-sky-500">Laravel</h3>
-                    <h2 class="text-xl font-semibold text-slate-800 leading-tight">Desarrollo de una API con Laravel
-                        siguiendo
-                        la
-                        especificación JSON:API
-                    </h2>
-                    <p class="text-slate-500 hidden md:block"> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Id
-                        quibusdam ad
-                        quod consectetur veniam
-                        quasi facilis quidem sunt quaerat. Tempore veniam, labore dignissimos et impedit inventore
-                        voluptas
-                        beatae praesentium cum?</p>
-                </div>
-                <div class="flex p-5 space-x-2">
-                    <img class="w-10 h-10 rounded-full" src="https://ui-avatars.com/api?name=Rubén Rangel"
-                        alt="Rubén Rangel">
-                    <div class="flex flex-col justify-center">
-                        <span class="text-sm font-semibold text-slate-600 leading-4">
-                            Rubén Rangel
-                        </span>
-                        <span class="text-sm text-slate-500">
-                            Mar 18, 2023
-                        </span>
-                    </div>
-
-                </div>
-            </article>
-            <article class="bg-white shadow rounded overflow-hidden flex flex-col">
-                <div class="h-52">
-                    <img class="h-full w-full object-cover object-center" src="/images/article-6.jpg"
-                        alt="Desarrollo de una API con Laravel siguiendo la especificación JSON:API">
-                </div>
-                <div class="p-5 space-y-3 flex-1">
-                    <h3 class="text-sm font-semibold text-sky-500">Laravel</h3>
-                    <h2 class="text-xl font-semibold text-slate-800 leading-tight">Desarrollo de una API con Laravel
-                        siguiendo
-                        la
-                        especificación JSON:API
-                    </h2>
-                    <p class="text-slate-500 hidden md:block"> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Id
-                        quibusdam ad
-                        quod consectetur veniam
-                        quasi facilis quidem sunt quaerat. Tempore veniam, labore dignissimos et impedit inventore
-                        voluptas
-                        beatae praesentium cum?</p>
-                </div>
-                <div class="flex p-5 space-x-2">
-                    <img class="w-10 h-10 rounded-full" src="https://ui-avatars.com/api?name=Rubén Rangel"
-                        alt="Rubén Rangel">
-                    <div class="flex flex-col justify-center">
-                        <span class="text-sm font-semibold text-slate-600 leading-4">
-                            Rubén Rangel
-                        </span>
-                        <span class="text-sm text-slate-500">
-                            Mar 18, 2023
-                        </span>
-                    </div>
-
-                </div>
-            </article>
+            </div>
         </div>
     </main>
     <footer class="py-10">
