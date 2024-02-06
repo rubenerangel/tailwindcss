@@ -4,7 +4,13 @@ module.exports = {
   darkMode: "class",
   content: ["./*.html"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // primary: "#44bb00",
+        // slate: { 950: "#0b101d" },
+        "slate-950": "#0b101d",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
