@@ -1,7 +1,4 @@
 const html = document.documentElement;
-// const lightIcon =
-// const darkIcon = document.getElementById("dark-icon");
-// const systemIcon = document.getElementById("system-icon");
 const themeOptions = document.querySelectorAll("[data-theme-option]");
 const themeMenu = document.getElementById("theme-menu");
 const icons = {
@@ -9,6 +6,15 @@ const icons = {
   dark: document.getElementById("dark-icon"),
   system: document.getElementById("system-icon"),
 };
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+let currentTheme = "system";
+// const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+// const lightIcon =
+// const darkIcon = document.getElementById("dark-icon");
+// const systemIcon = document.getElementById("system-icon");
+
+updateThemeUI(currentTheme);
+updateTheme(currentTheme);
 
 function updateThemeUI(theme) {
   // TODO: Hide all ICONS
@@ -28,7 +34,30 @@ function updateThemeUI(theme) {
 
   // TODO: Hide theme MENU
   themeMenu.classList.add("hidden");
+
+  updateTheme(theme);
 }
+
+function updateTheme(theme) {
+  if (theme === "dark" || (theme === "system" && isDarkMode.matches)) {
+    html.classList.add("dark");
+    // sunIcon.classList.add("hidden");
+    // moonIcon.classList.remove("hidden");
+  } else if (theme === "light" || (theme === "system" && !isDarkMode.matches)) {
+    html.classList.remove("dark");
+    // sunIcon.classList.remove("hidden");
+    // moonIcon.classList.add("hidden");
+  }
+
+  currentTheme = theme;
+}
+
+isDarkMode.addEventListener("change", ({ matches }) => {
+  // updateTheme(matches);
+  if (currentTheme === "system") {
+    matches ? html.classList.add("dark") : html.classList.remove("dark");
+  }
+});
 
 themeOptions.forEach((option) => {
   // alert();
@@ -39,28 +68,9 @@ themeOptions.forEach((option) => {
   });
 });
 
-const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
-const systemDarkMode = matchMedia.matches;
+// const systemDarkMode = matchMedia.matches;
 
 // updateTheme(systemDarkMode);
-
-matchMedia.addEventListener("change", ({ matches }) => {
-  updateTheme(matches);
-});
-
-// function updateTheme(darkMode) {
-//   if (darkMode) {
-// html.classList.add("dark");
-// lightIcon.classList.add("hidden");
-// darkIcon.classList.add("hidden");
-// systemIcon.classList.remove("hidden");
-// } else {
-// html.classList.remove("dark");
-// lightIcon.classList.add("hidden");
-// darkIcon.classList.add("hidden");
-// systemIcon.classList.remove("hidden");
-//   }
-// }
 
 document
   .getElementById("toggle-theme-menu")
