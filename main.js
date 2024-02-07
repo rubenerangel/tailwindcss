@@ -9,8 +9,8 @@ const icons = {
 };
 const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 // let currentTheme = "system";
-let currentTheme =
-  localStorage.getItem("theme") || localStorage.setItem("theme", "system");
+let currentTheme = localStorage.getItem("theme") || "system";
+localStorage.setItem("theme", currentTheme);
 
 // console.log(currentTheme);
 // const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
