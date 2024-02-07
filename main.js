@@ -7,7 +7,11 @@ const icons = {
   system: document.getElementById("system-icon"),
 };
 const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-let currentTheme = "system";
+// let currentTheme = "system";
+let currentTheme =
+  localStorage.getItem("theme") || localStorage.setItem("theme", "system");
+
+// console.log(currentTheme);
 // const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
 // const lightIcon =
 // const darkIcon = document.getElementById("dark-icon");
@@ -36,6 +40,7 @@ function updateThemeUI(theme) {
   themeMenu.classList.add("hidden");
 
   updateTheme(theme);
+  localStorage.setItem("theme", theme);
 }
 
 function updateTheme(theme) {
@@ -60,7 +65,6 @@ isDarkMode.addEventListener("change", ({ matches }) => {
 });
 
 themeOptions.forEach((option) => {
-  // alert();
   option.addEventListener("click", () => {
     const theme = option.dataset.themeOption;
 
@@ -69,7 +73,6 @@ themeOptions.forEach((option) => {
 });
 
 // const systemDarkMode = matchMedia.matches;
-
 // updateTheme(systemDarkMode);
 
 document
