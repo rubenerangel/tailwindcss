@@ -13,16 +13,38 @@
 <body class="bg-slate-100 dark:bg-slate-950 flex flex-col h-screen">
     <header class="bg-white px-6 shadow dark:bg-slate-900">
         <div class="mx-auto flex h-16 max-w-6xl items-center justify-between">
-            <button
-                class="-ml-1 rounded p-1 text-slate-500 transition-colors hover:bg-sky-500 hover:text-slate-100 focus:ring-2 focus:ring-slate-200 dark:text-slate-400 dark:hover:text-slate-100">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            <!-- MENU Section -->
+            <button id="toggle-mobile-menu"
+                class="-ml-1 rounded p-1 text-slate-500 transition-colors hover:bg-sky-500 hover:text-slate-100 focus:ring-2 focus:ring-slate-200 dark:text-slate-400 dark:hover:text-slate-100 md:hidden">
+                <!-- Hambuger Botton -->
+                <svg id="open-menu-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
                     </path>
                 </svg>
+                <!-- Close or Time Botton -->
+                <svg id="close-menu-icon" class="h-6 w-6 hidden" data-slot="icon" fill="none" stroke-width="1.5"
+                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+                </svg>
             </button>
+
+            <!-- Brand Section Link -->
+            <a class="text-sky-500 duration-200 hover:rotate-6 hidden md:block" href="/">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                    <path
+                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                    </path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222">
+                    </path>
+                </svg>
+            </a>
+
             <div class="-mr-4 flex items-center">
-                <a class="text-sky-500 duration-200 hover:rotate-6" href="#">
+                <a class="text-sky-500 duration-200 hover:rotate-6 md:hidden" href="/">
                     <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
@@ -36,9 +58,7 @@
                 </a>
                 <div class="ml-8 hidden space-x-8 md:flex">
                     <a class="px-3 py-2 text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500"
-                        href="/">
-                        Home
-                    </a>
+                        href="/"> Home </a>
                     <a class="px-3 py-2 text-sky-500" href="/about.html">
                         About
                     </a>
@@ -54,15 +74,71 @@
             </div>
 
             <div class="flex">
-                <button
-                    class="rounded-full text-slate-500 transition-colors hover:text-sky-500 focus:ring-2 focus:ring-slate-200 focus:ring-offset-1 dark:text-slate-400 dark:hover:text-sky-500">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                        </path>
-                    </svg>
-                </button>
+                <div class="relative pt-2">
+                    <button id="toggle-theme-menu"
+                        class="rounded-full text-slate-500 transition-colors hover:text-sky-500 focus:ring-2 focus:ring-slate-200 focus:ring-offset-1 dark:text-slate-400 dark:hover:text-sky-500 dark:focus:ring-slate-700 focus:ring-offset-transparent">
+                        <!-- Light -->
+                        <svg id="light-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+
+                        <!-- Dark -->
+                        <svg id="dark-icon" class="h-6 w-6 hidden" data-slot="icon" fill="none" stroke-width="1.5"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z">
+                            </path>
+                        </svg>
+
+                        <!-- System -->
+                        <svg id="system-icon" class="h-6 w-6" data-slot="icon" fill="none" stroke-width="1.5"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- Menu change Dark Mode -->
+                    <div id="theme-menu"
+                        class="absolute overflow-hidden right-0 bg-white/90 z-20 w-28 rounded-md shadow-lg dark:bg-slate-800/90 hidden">
+                        <button data-theme-option="light"
+                            class="flex w-full items-center space-x-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                                </path>
+                            </svg>
+                            <span>Light</span>
+                        </button>
+                        <button data-theme-option="dark"
+                            class="flex w-full items-center space-x-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900">
+                            <svg class="h-6 w-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z">
+                                </path>
+                            </svg>
+                            <span>Dark</span>
+                        </button>
+                        <button data-theme-option="system"
+                            class="flex w-full items-center space-x-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900">
+                            <svg class="h-6 w-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25">
+                                </path>
+                            </svg>
+                            <span>System</span>
+                        </button>
+                    </div>
+                </div>
                 <button
                     class="ml-4 rounded-full text-slate-500 transition-colors hover:text-sky-500 focus:ring-2 focus:ring-slate-200 focus:ring-offset-1">
                     <img class="h-6 w-6 rounded-full" src="https://ui-avatars.com/api?name=Rubén+Rangel"
@@ -70,17 +146,18 @@
                 </button>
             </div>
         </div>
+
         <!-- Mobile navigation -->
-        <div class="space-y-1 border-t pb-3 pt-2 dark:border-slate-500 md:hidden">
-            <a href="/"
-                class="block rounded-md px-3 py-2 text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white">
+        <div id="mobile-menu" class="space-y-1 border-t pb-3 pt-2 dark:border-slate-500 hidden">
+            <a class="block rounded-md px-3 py-2 text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white"
+                href="/">
                 Home
             </a>
-            <a href="/about.html" class="block rounded-md bg-sky-500 px-3 py-2 text-white">
+            <a class="block rounded-md bg-sky-500 px-3 py-2 text-white" href="/about.html">
                 About
             </a>
-            <a href="/blog.html"
-                class="block rounded-md px-3 py-2 text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white">
+            <a class="block rounded-md px-3 py-2 text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white"
+                href="/blog.html">
                 Blog
             </a>
             <a href="/contact.html"
@@ -160,7 +237,7 @@
             </div>
         </div>
     </footer>
-
+    <script type="module" src="./main.js"></script>
 </body>
 
 </html>
