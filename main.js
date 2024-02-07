@@ -1,3 +1,4 @@
+const toggleMobileMenu = document.getElementById("toggle-mobile-menu");
 const html = document.documentElement;
 const themeOptions = document.querySelectorAll("[data-theme-option]");
 const themeMenu = document.getElementById("theme-menu");
@@ -85,3 +86,10 @@ document
 //   sunIcon.classList.toggle("hidden");
 //   moonIcon.classList.toggle("hidden");
 // });
+
+toggleMobileMenu.addEventListener("click", () => {
+  document.getElementById("mobile-menu").classList.toggle("hidden");
+
+  document.getElementById("open-menu-icon").classList.toggle("hidden");
+  document.getElementById("close-menu-icon").classList.toggle("hidden");
+});
