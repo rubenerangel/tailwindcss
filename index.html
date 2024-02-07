@@ -51,19 +51,19 @@
             </div>
 
             <div class="flex">
-                <div class="relative">
-                    <button id="toggle-dark-mode"
+                <div class="relative pt-2">
+                    <button id="toggle-theme-menu"
                         class="rounded-full text-slate-500 transition-colors hover:text-sky-500 focus:ring-2 focus:ring-slate-200 focus:ring-offset-1 dark:text-slate-400 dark:hover:text-sky-500 dark:focus:ring-slate-700 focus:ring-offset-transparent">
-                        <!-- Sun -->
-                        <svg id="sun-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <!-- Light -->
+                        <svg id="light-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
                             </path>
                         </svg>
 
-                        <!-- Moon -->
-                        <svg id="moon-icon" class="h-6 w-6" data-slot="icon" fill="none" stroke-width="1.5"
+                        <!-- Dark -->
+                        <svg id="dark-icon" class="h-6 w-6 hidden" data-slot="icon" fill="none" stroke-width="1.5"
                             stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -72,7 +72,7 @@
                         </svg>
 
                         <!-- System -->
-                        <svg id="system-icon" class="h-6 w-6 hidden" data-slot="icon" fill="none" stroke-width="1.5"
+                        <svg id="system-icon" class="h-6 w-6" data-slot="icon" fill="none" stroke-width="1.5"
                             stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                             aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -80,9 +80,11 @@
                             </path>
                         </svg>
                     </button>
-                    <div
-                        class="absolute overflow-hidden right-0 bg-white/90 z-20 w-28 rounded-md shadow-lg dark:bg-slate-800/90">
-                        <button
+
+                    <!-- Menu change Dark Mode -->
+                    <div id="theme-menu"
+                        class="absolute overflow-hidden right-0 bg-white/90 z-20 w-28 rounded-md shadow-lg dark:bg-slate-800/90 hidden">
+                        <button data-theme-option="light"
                             class="flex w-full items-center space-x-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +94,7 @@
                             </svg>
                             <span>Light</span>
                         </button>
-                        <button
+                        <button data-theme-option="dark"
                             class="flex w-full items-center space-x-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900">
                             <svg class="h-6 w-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -102,7 +104,7 @@
                             </svg>
                             <span>Dark</span>
                         </button>
-                        <button
+                        <button data-theme-option="system"
                             class="flex w-full items-center space-x-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-900 dark:focus:bg-slate-900">
                             <svg class="h-6 w-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -121,6 +123,7 @@
                 </button>
             </div>
         </div>
+
         <!-- Mobile navigation -->
         <div class="space-y-1 border-t pb-3 pt-2 dark:border-slate-500 hidden">
             <a href="/" class="block rounded-md bg-sky-500 px-3 py-2 text-white">
